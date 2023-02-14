@@ -1,0 +1,57 @@
+@use "foundation/foundation.scss";
+@use "components/profile_img.scss";
+
+$primary-color: rgba(115, 230, 175, 0.70);
+$secondary-color: rgb(245, 180, 250);
+$text-color: rgb(45, 45, 45);
+
+$box-colors: (
+  youtube: #FF0000, // text #282828
+  instagram: #af6edb,
+  facebook: #3b5998,
+  github: #171515,
+  dribbble: #ea4c89,
+);
+
+@each $social, $color in $box-colors{
+  .#{$social} {
+    color: white;
+    background-color: $color;
+  }
+}
+
+html{
+  background-color: rgba(115, 230, 175, 0.70);
+  color: $text-color;
+};
+
+img{
+  margin-top: 3em;
+}
+
+#wrapper{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+#instagram{
+  height: 300px;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $secondary-color;
+  border-radius: 10px;
+  width: 20vh;
+  color: $text-color;
+  text-decoration: none;
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
